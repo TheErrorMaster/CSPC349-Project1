@@ -1,0 +1,69 @@
+html, body, section{
+    height: 100%;
+    margin: 0;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-image: linear-gradient(lavender, powderblue, lightblue,plum); 
+}
+.header img{
+    float: left;
+    height:60px;
+    width: 70px;;
+}
+img{
+    max-width:  100%;
+    max-height: 100%;
+} 
+
+body{
+    margin: 0px;
+}
+
+.header h1{
+    position: relative;
+    top: 18px;
+    left:10px; 
+}
+
+.column{
+    float: left;
+    width: 25%;
+    padding: 15px;
+}
+
+.column img{
+    opacity: 0.8;
+    cursor: pointer;
+}
+
+.column img:hover{
+    opacity: 1;
+}
+
+.row:after{
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.container {
+    position: relative;
+    display: none;
+}
+
+#imgtext{
+    position: absolute;
+    bottom: 15px;
+    left:  50px;
+    color: black;
+    font-size: 50px;
+} 
+
+.closebtn{
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    color: black;
+    font-size: 35px;
+    cursor: pointer;
+}

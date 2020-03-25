@@ -1,0 +1,27 @@
+html, body, section {
+    height: 100%;
+    margin: 0;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-image: linear-gradient( lavender, powderblue, lightblue, plum);
+}
+
+.header img{
+    float: left;
+    height:60px;
+    width: 70px;;
+}
+img{
+    max-width:  100%;
+    max-height: 100%;
+} 
+
+body{
+    margin: 0px;
+}
+
+.header h1{
+    position: relative;
+    top: 18px;
+    left:10px; 
+}
