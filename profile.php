@@ -43,11 +43,28 @@
         </div>
         
         <div class = "main-container">
+            <h1>About: </h1>
             <?php
-            echo '<p>Gender: '.$_POST["gender"].'</p>';
-            echo '<p>Size: '.$_POST["size"].'</p>';
-            echo '<p>Breed: '.$_POST["breed"].'</p>';
-            echo '<p>Owner Username: '.$_POST["owner"].'</p>';
+            //connect to db
+            $conn = db_connect();
+            // get the phone number of owner
+            $result = $conn->query("SELECT phone FROM user WHERE username='".$_POST["owner"]."'");
+            if(!$result) {
+                throw new Exception('Could not execute query');
+            }
+            // fetch the data
+            if($row = $result->fetch_row()){
+                $num = $row[0];
+            }
+            // display data
+            echo '<p class="lead">Gender: '.$_POST["gender"].'</p>';
+            echo '<p class="lead">Size: '.$_POST["size"].'</p>';
+            echo '<p class="lead">Breed: '.$_POST["breed"].'</p>';
+            echo '<p class="lead">Owner Username: '.$_POST["owner"].'</p>';
+            echo '<p class="lead">Owner Phone: '.$num.'</p>';
+            // close connection and query
+            $result->close();
+            $conn->close();
             ?>
         </div>
         
