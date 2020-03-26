@@ -15,7 +15,7 @@
 
 <nav class="navbar navbar-expand-md navbar-light bg-light">
     <a href="#" class="navbar-brand">
-        <img src="Images/logo.png" height="90" alt="PetConnect">
+        <img src="Images/logo.png" height="100" alt="PetConnect">
     </a>
     <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
         <span class="navbar-toggler-icon"></span>
@@ -31,7 +31,7 @@
     </div>
 </nav>
 
-<div class="row">
+<div class="homeRow">
 
 <?php
 //connect to db
@@ -48,8 +48,11 @@ if(!$result) {
 
 while($row = $result->fetch_row()){
     echo'<form action="profile.php" method="post">';
-    echo '<div class="column">';
-        echo '<input type="image" src="'.$row[5].'" alt="submit" width="200" height="200">';
+    echo '<div class="homeCol">';
+        echo '<input type="image" src="'.$row[5].'" alt="submit" width="200" height="200"><br>';
+        
+        echo '<nobr>Name: '.$row[1].'</nobr><br>';
+        echo '<nobr>Breed: '.$row[4].'</nobr>';;
     echo '</div>';
     echo '<input type="hidden" name="name" value="'.$row[1].'">';
     echo '<input type="hidden" name="gender" value="'.$row[2].'">';
